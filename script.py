@@ -14,32 +14,28 @@ time.sleep(1)
 print(colors.GREEN + "What would you like to do?:\n" + colors.GREEN)
 print(colors.GREEN + "1. Record key strokes in your device" + colors.GREEN)
 print(colors.GREEN + "2. View the key strokes stored" + colors.GREEN)
-print(colors.GREEN + "3. Delete the stored data" + colors.GREEN)
+print(colors.GREEN + "3. Delete the stored data\n" + colors.GREEN)
 response = input()
 
 
 # 1. Record data
 if response == "1":
-    print("\nSelected: 1")
-    response = "0"
+    with open('records.txt', 'a') as docWrite:
+        docWrite.write('Test' + "\n")
 
 
 # 2. View data
 elif response == "2":
-    print("\nSelect: 2")
-    response = "0"
+    with open('records.txt', 'r') as docRead:
+        docContents = docRead.read()
+        print("\n" + docContents)
     
 
-# 3. Delete data
+# 3. Overwrite data
 elif response == "3": 
-    print("\nSelect: 3")
-    response = "0"
+    with open('records.txt', 'w') as docOverWrite:
+        docOverWrite.write()
     
-
 # Record key strokes
 
-
-# Copy key strokes to document
-
-# Testing
 time.sleep(10)
