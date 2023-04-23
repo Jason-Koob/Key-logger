@@ -19,7 +19,7 @@ print(colors.CYAN + "Welcome to Koob's Key Logger\n" + colors.CYAN)
 time.sleep(1)
 
 # Start menu
-def menu(response):
+def menu():
     print(colors.GREEN + "What would you like to do?:\n" + colors.GREEN)
     print(colors.GREEN + "1. Record key strokes in your device" + colors.GREEN)
     print(colors.GREEN + "2. View the key strokes stored" + colors.GREEN)
@@ -64,4 +64,4 @@ def menu(response):
             docOverWrite.write()
 
 
-menu('1')
+menu()
