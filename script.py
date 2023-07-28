@@ -34,16 +34,22 @@ def menu():
                 key = key.char
                 with open('records.txt', 'a') as docWrite:
                         docWrite.write(localTime + key + '\n')
+
+                if key == '`':
+                    quit()
+
             except AttributeError:
                 # special characters
                 key = str(key)
                 with open('records.txt', 'a') as docWrite:
                     docWrite.write(localTime + key + '\n')
         os.system('cls')
-        print(colors.CYAN + "Your key strokes are now being recorded: \n")
+        print(colors.CYAN + "Your key strokes are now being recorded: \nPress ` to stop recording.")
+            
 
         with pynput.keyboard.Listener(on_press=on_press) as listener:
             listener.join()
+
 
 # 2. View data
     elif response == '2':
